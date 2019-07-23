@@ -9,9 +9,11 @@ function init() {
   };
   this.settings.gwd3d = {
     keyframes: [0, 0.5, 2, 3.17, 4.9, 6.67, 10, 15],
-    animationName: 'Take 001',
-    frameObj: { animationFrame: 0 },
+    animationName: 'Take 001'
   };
+
+  this.keyObj = {};
+  this.keyObj.key = this.settings.gwd3d.keyframes[0];
 
   //initial vars
   this.scrollEnabled = false;
@@ -303,6 +305,28 @@ function getMainTimeline(obj) {
 
   this.gwdPageContent.style.width = this.bannerPage.style.width = this.settings.dimensions.width + 'px';
   this.gwdPageContent.style.height = this.bannerPage.style.height = this.settings.dimensions.height + 'px';
+
+  return tl;
+}
+
+function getIdleTimeline(obj) {
+  var tl = new TimelineMax(obj);
+  tl.fromTo(
+    this.secondsObj,
+    this.settings.gwd3d.keyframes[5] - this.settings.gwd3d.keyframes[4],
+    { key: this.settings.gwd3d.keyframes[4] },
+    {
+      key: this.settings.gwd3d.keyframes[5],
+      ease: Linear.easeNone,
+      onUpdate: function() {
+        update3DModelAnimation(
+          this.gwd3dModel,
+          this.keyObj.key,
+          this.settings.gwd3d.animationName,
+        );
+      }.bind(this),
+    },
+  );
 
   return tl;
 }
