@@ -1,0 +1,18 @@
+{
+  "name": "zipfolder",
+  "version": "1.0.0",
+  "description": "run in cmd with :\r node zip-a-folder [absolute path of folder containing all the .zip]",
+  "main": "zip-a-folder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "extract-zip": "^1.6.7",
+    "file-set": "^2.0.1",
+    "replace-in-file": "^4.1.1",
+    "zip-a-folder": "0.0.8"
+  }
+}
