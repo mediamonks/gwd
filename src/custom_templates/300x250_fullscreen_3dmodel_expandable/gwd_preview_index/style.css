@@ -1,0 +1,52 @@
+#loader,
+#loaderExpand {
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+  border: 3px solid #ddd;
+  border-top: 3px solid #e3ab36;
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  top: 50%;
+  left: 50%;
+  margin-top: -37px;
+  margin-left: -37px;
+  transform: rotate(0deg);
+}
+
+@-webkit-keyframes spin {
+  to {
+    border-top-color: #41af53;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  to {
+    border-top-color: #41af53;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#closeBtnOver:active{
+  opacity: 1;
+}
+
+#ctaOver:active{
+  opacity: 1;
+}
+
+#flowesPlantsTop2{transform-origin: 0% 0%;}
+#flowesPlantsRight2{transform-origin: 100% 60%;}
+#flowesPlantsRight3{transform-origin: 100% 0%;}
+#flowesPlantsRight4{transform-origin: 100% 50%;}
+#flowesPlantsLeft4{transform-origin: 0% 20%;}
+#flowesPlantsLeft5{transform-origin: 0% 80%;}
+#flowesPlantsLeft3{transform-origin: 0% 50%;}
+#flowesPlantsLeft2{transform-origin: 0% 90%;}
+#flowesPlantsRight1{transform-origin: 100% 20%;}
+#flowesPlantsTop1{transform-origin: 0% 0%;}
+#flowesPlantsLeft1{transform-origin: 0% 90%;}
+#flowesPlantsBottom1{transform-origin: 40% 100%;}

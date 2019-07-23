@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="closeButton" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 56 56" style="enable-background:new 0 0 56 56;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:none;}
+</style>
+<g id="lines">
+	<rect x="27" y="12.34" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -11.7015 28.25)" class="st0" width="2.5" height="31.82"/>
+	<rect x="12.34" y="27" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -11.7015 28.25)" class="st0" width="31.82" height="2.5"/>
+</g>
+<rect id="clickArea" x="3" y="3" class="st1" width="50" height="50"/>
+</svg>
