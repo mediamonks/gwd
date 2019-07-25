@@ -5,6 +5,26 @@ const replace = require('replace-in-file');
 const fs = require('fs');
 
 
+
+// ---- REGEX for what there is to change
+const regex1 = new RegExp('Expandable 3.0.0', 'g');
+const regex2 = new RegExp('Enabler.requestFullscreenExpand', 'g');
+const regex3 = new RegExp('Enabler.queryFullscreenSupport', 'g');
+const regex4 = new RegExp('Enabler.queryFullscreenDimensions', 'g');
+const regex5 = new RegExp('Enabler.finishFullscreenExpand', 'g');
+const regex6 = new RegExp('Enabler.requestFullscreenCollapse', 'g');
+const regex7 = new RegExp('Enabler.finishFullscreenCollapse', 'g');
+
+// ---- REPLACE with the following string
+const to1 = 'Banner 3.0.0';
+const to2 = 'Enabler[\'requestFull\' + \'screenExpand\']';
+const to3 = 'Enabler[\'queryFull\' + \'screenSupport\']';
+const to4 = 'Enabler[\'queryFull\' + \'screenDimensions\']';
+const to5 = 'Enabler[\'finishFull\' + \'screenExpand\']';
+const to6 = 'Enabler[\'requestFull\' + \'screenCollapse\']';
+const to7 = 'Enabler[\'finishFull\' + \'screenCollapse\']';
+
+
 class ZipAFolder {
 
     static async main() {
@@ -42,10 +62,7 @@ class ZipAFolder {
 
             },2000);
          },2000);
-
     }
-
-
 }
 
 // ------------------- UNZIP -------------------------------
@@ -98,25 +115,6 @@ async function replaceInFiles(path)
     // replace occurence in the file
     try {
 
-      // ---- REGEX for what there is to change
-      const regex1 = new RegExp('Expandable 3.0.0', 'g');
-      const regex2 = new RegExp('Enabler.requestFullscreenExpand', 'g');
-      const regex3 = new RegExp('Enabler.queryFullscreenSupport', 'g');
-      const regex4 = new RegExp('Enabler.queryFullscreenDimensions', 'g');
-      const regex5 = new RegExp('Enabler.finishFullscreenExpand', 'g');
-      const regex6 = new RegExp('Enabler.requestFullscreenCollapse', 'g');
-      const regex7 = new RegExp('Enabler.finishFullscreenCollapse', 'g');
-
-      // ---- REPLACE with the following string
-      const to1 = 'Banner 3.0.0';
-      const to2 = 'Enabler[\'requestFull\' + \'screenExpand\']';
-      const to3 = 'Enabler[\'queryFull\' + \'screenSupport\']';
-      const to4 = 'Enabler[\'queryFull\' + \'screenDimensions\']';
-      const to5 = 'Enabler[\'finishFull\' + \'screenExpand\']';
-      const to6 = 'Enabler[\'requestFull\' + \'screenCollapse\']';
-      const to7 = 'Enabler[\'finishFull\' + \'screenCollapse\']';
-
-
       // ---- find/replace
       var results = await replace({files:file,from:regex1,to: to1});
       //console.log('Replacement results:', results);
@@ -134,7 +132,6 @@ async function replaceInFiles(path)
       //console.log('Replacement results:', results);
 
       console.log('Replacement done');
-
     }
     catch (error) {
       console.error('Error occurred:', error);
@@ -193,7 +190,6 @@ async function zipFiles(path) {
     // delete the not zipped directory
     await deleteFolder(path, dirName);
     console.log('deleting done');
-
   }
 }
 
