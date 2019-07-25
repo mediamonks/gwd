@@ -292,7 +292,6 @@ function onRawScroll(event) {
 
 function handleHostpageScroll(e) {
   if (!window.isExpanded && !window.engagement) {
-    window.scrollEnabled = true;
     var per = e.creativeFramePercentY;
 
     var bounds = window.settings.scrolling.endBound - window.settings.scrolling.startBound;
@@ -300,7 +299,7 @@ function handleHostpageScroll(e) {
 
     // if in between bounds of visibility top/bottom, recalculating current frame based upon the bounds and current percentY
     var frame = Math.max(
-      startFrame,
+        window.settings.scrolling.startFrame,
       Math.min(window.settings.scrolling.endFrame, frames * ((per - window.settings.scrolling.startBound) / bounds) + window.settings.scrolling.startFrame)
     );
     update3DModelAnimation(
