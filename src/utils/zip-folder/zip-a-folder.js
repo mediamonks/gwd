@@ -1,3 +1,4 @@
+
 const { zip } = require('zip-a-folder');
 const FileSet = require('file-set');
 const extract = require('extract-zip');
@@ -38,7 +39,7 @@ class ZipAFolder {
       var p = process.argv[2];        // path
 
       console.log(p);
-      const regexp1 = new RegExp('/', 'g');
+      const regexp1 = new RegExp('\\\\', 'g');
       p = p.replace(regexp1,'\\');
 
       // create folder
@@ -70,6 +71,7 @@ async function unzipFiles(path, newFolder)
 {
   console.log('------------ Start unzip -------------')
   let filesToUnzip = new FileSet(path + '/*.zip') ;
+
   for(let i=0;i<filesToUnzip.files.length;i++)
   {
     // get current zip path
@@ -79,6 +81,7 @@ async function unzipFiles(path, newFolder)
     var nameOfZip = '';
     var regex = new RegExp('/[a-zA-z0-9_]+\\.zip');
     var posOfZip = dir.search(regex);
+
     for(let j=posOfZip+1; j<dir.length ; j++)
     {
       nameOfZip = nameOfZip + dir[j];
@@ -86,7 +89,7 @@ async function unzipFiles(path, newFolder)
 
     // get the new name for the unzip directory
     let dirName = path +'/' + newFolder +'/';
-    console.log(dirName);
+
     for(let j=0; j<(nameOfZip.length-4) ; j++)
     {
       dirName = dirName + nameOfZip[j] ;
