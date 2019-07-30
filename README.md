@@ -11,9 +11,9 @@ Use these templates for an easy start on GWD projects. Currently mainly focused 
 Get Google Web Designer: https://webdesigner.withgoogle.com/
 
 
-#### Installation
+### Installation
 
-##### Custom Templates
+#### Custom Templates
 
 You can use the templates located in src/custom_templates directly by opening them in Google Web Designer. And you can put the templates in your personal gwd custom templates folder. Should be located here on Windows:
 
@@ -24,7 +24,7 @@ C:\Users\[username]\Documents\Google Web Designer\templates
 Open a template by opening the index.html file. 
 For example, open src/custom_templates/300x250_fullscreen_3dmodel_expandable/index.html and save it somewhere on your computer.
 
-###### 300x250_fullscreen_3dmodel_expandable
+##### 300x250_fullscreen_3dmodel_expandable
 
 This one has been designed to work with the new 3d Model Component in a fullscreen mobile expandable creative in portrait mode. It includes animation and user events and workarounds for scrolling. 
 
@@ -33,9 +33,9 @@ This one has been designed to work with the new 3d Model Component in a fullscre
 * **animation.js** - Contains all the animation of the creative, setup with the greensock library
 * **scroll.html** - Available to display your creative with scrollbars and scrolling events.
 
-##### Utils
+#### Utils
 
-###### zip-folder
+##### zip-folder
 A workaround for uploading your single-page fullscreen expandable zips into DV360 after publishing them locally as zips. It basically replaces some Enabler fullscreen functions to prevent DV360 not accepting the custom setup.
 
 Install the mandatory node_modules in cmd with:	
