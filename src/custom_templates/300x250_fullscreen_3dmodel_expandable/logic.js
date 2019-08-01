@@ -14,15 +14,72 @@ function init() {
   window.isCollapsedSwiping = false;
   window.scrollEnabled = false;
 
-  window.bannerPage.addEventListener(
-    "pageload",
-    handleBannerPageLoad.bind(window)
-  );
+  window.gwd3dModel = document.querySelector("#gwd-3d-model_1");
+
+  //check when the 3d model is available
+  window.addEventListener("message", handle3dModelEvents, false);
+
+  //check when gwd has loaded the page, if there is no 3dmodel, you should use this event to start your animation/banner
+  window.bannerPage.addEventListener("pageload", handleBannerPageLoad.bind(window));
 }
 function handleBannerPageLoad() {
-  window.gwd3dModel = document.querySelector("#gwd-3d-model_1");
-  window.gwd3dModelContent = window.gwd3dModel.children[0].contentWindow;
-  window.addEventListener("message", handle3dModelEvents, false);
+  console.log("page loaded");
+
+}
+
+function handle3dModelEvents(e) {
+  //for checking yaw, pivot and zoom when positioning 3dmodel
+  // if (typeof e.data == 'string') {
+  //   console.log(e.data);
+  // }
+
+  //check if 3dModel is available
+  if (!window.gwd3dModelContent) {
+
+    window.gwd3dModelContent = window.gwd3dModel.children[0].contentWindow;
+  }
+
+  if (e && e.data == "stoptimer:TimeToFirstFrame") {
+    initBanner();
+  }
+
+
+  if (e && e.data == "starttimer:TotalEngagement") {
+    if (!window.engagement) {
+      window.engagement = true;
+    }
+  }
+
+  if (e && e.data == "stoptimer:TotalEngagement") {
+    window.engagement = false;
+  }
+
+  if (e && e.data == "starttimer:TimeToClick") {
+    window.clickTime = new Date();
+
+    if (!window.isExpanded) {
+      window.isCollapsedSwiping = true;
+
+      if (window.mainTimeline.currentLabel() != "banner") {
+        window.mainTimeline.tweenFromTo("swipe", "click_to_expand");
+      } else {
+        window.mainTimeline.tweenFromTo("banner", "click_to_expand");
+      }
+    }
+  }
+
+  if ((e && e.data == "stoptimer:TimeToClick") || e.data == "cumulativecounter:Rotate") {
+    window.releaseClickTime = new Date();
+    window.clickedTime = window.releaseClickTime.getTime() - window.clickTime.getTime();
+
+    if (window.clickedTime < 100) {
+      expand();
+    }
+
+    if (!window.isExpanded) {
+      window.mainTimeline.tweenTo("banner");
+    }
+  }
 }
 
 function initBanner() {
@@ -38,52 +95,24 @@ function initBanner() {
   // document.querySelector('#gwd3dModelDisable').addEventListener('click', handle3dModelClick, false);
 
   //enabler events
-  Enabler.addEventListener(
-    studio.events.StudioEvent.EXIT,
-    handleExit.bind(window)
-  );
-  Enabler.addEventListener(
-    studio.events.StudioEvent.FULLSCREEN_EXPAND_START,
-    handleExpandStart.bind(window)
-  );
-  Enabler.addEventListener(
-    studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH,
-    handleExpandFinish.bind(window)
-  );
-  Enabler.addEventListener(
-    studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START,
-    handleCollapseStart.bind(window)
-  );
-  Enabler.addEventListener(
-    studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH,
-    handleCollapseFinish.bind(window)
-  );
-  Enabler.addEventListener(
-    studio.events.StudioEvent.ORIENTATION,
-    changeOrientationHandler.bind(window)
-  );
+  Enabler.addEventListener(studio.events.StudioEvent.EXIT, handleExit.bind(window));
+  Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_EXPAND_START, handleExpandStart.bind(window));
+  Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_EXPAND_FINISH, handleExpandFinish.bind(window));
+  Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_START, handleCollapseStart.bind(window));
+  Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH, handleCollapseFinish.bind(window));
+  Enabler.addEventListener(studio.events.StudioEvent.ORIENTATION, changeOrientationHandler.bind(window));
 
-  document
-    .querySelector("#closeButton")
-    .addEventListener("click", collapse.bind(window));
-  document
-    .querySelector("#expandArrowsButton")
-    .addEventListener("click", expand.bind(window));
+  document.querySelector("#expandArrowsButton").addEventListener("click", expand.bind(window));
 
-  document
-    .querySelector("#cta")
-    .addEventListener("click", handleCtaClick.bind(window));
-  document
-    .querySelector("#cta")
-    .addEventListener("touchstart", handleTouchStart);
+  document.querySelector("#cta").addEventListener("click", handleCtaClick.bind(window));
+  document.querySelector("#cta").addEventListener("touchstart", handleTouchStart);
   document.querySelector("#cta").addEventListener("touchend", handleTouchEnd);
+
+  document.querySelector("#closeButton").addEventListener("click", collapse.bind(window));
 
   // when testing locally in an iframe, scroll will be enabled
   if (!Enabler.isServingInLiveEnvironment()) {
-    if (
-      location.href.indexOf("localhost") != -1 &&
-      window.self !== window.top
-    ) {
+    if (location.href.indexOf("localhost") != -1 && window.self !== window.top) {
       window.scrollEnabled = true;
       console.log("scrolling enabled in testing mode");
     }
@@ -98,11 +127,7 @@ function initBanner() {
     }
 
     window.update3dModelPosition("collapse_end");
-    update3DModelAnimation(
-      window.gwd3dModel,
-      window.settings.gwd3d.keyframes[4],
-      window.settings.gwd3d.animationName
-    );
+    update3DModelAnimation(window.gwd3dModel, window.settings.gwd3d.keyframes[4], window.settings.gwd3d.animationName);
   }
 
   window.mainTimeline = getMainTimeline({ paused: true });
@@ -131,17 +156,14 @@ function expand() {
       }
     }.bind(window)
   );
-  Enabler.queryFullscreenSupport()
-
+  Enabler.queryFullscreenSupport();
 }
 
 function handleExpandStart(e) {
   window.update3dModelPosition("expand_start");
 
-  window.gwdPageContent.style.width = window.bannerPage.style.width = window.gwd3dModel.style.width =
-    "100%";
-  window.gwdPageContent.style.height = window.bannerPage.style.height = window.gwd3dModel.style.height =
-    "100%";
+  window.gwdPageContent.style.width = window.bannerPage.style.width = window.gwd3dModel.style.width = "100%";
+  window.gwdPageContent.style.height = window.bannerPage.style.height = window.gwd3dModel.style.height = "100%";
 
   Enabler.finishFullscreenExpand();
 }
@@ -160,7 +182,6 @@ function handleExpandFinish() {
 
 function collapse() {
   Enabler.requestFullscreenCollapse();
-
 }
 
 function handleCollapseStart(e) {
@@ -170,21 +191,13 @@ function handleCollapseStart(e) {
     window.settings.dimensions.height + "px";
 
   Enabler.finishFullscreenCollapse();
-
 }
 
 function handleCollapseFinish(e) {
   window.gwd3dModel.pauseAnimation(window.settings.gwd3d.animationName);
-  window.gwd3dModel.setAnimationTime(
-    window.settings.gwd3d.animationName,
-    window.settings.gwd3d.keyframes[2]
-  );
+  window.gwd3dModel.setAnimationTime(window.settings.gwd3d.animationName, window.settings.gwd3d.keyframes[2]);
   window.update3dModelPosition("collapse_end");
-  update3DModelAnimation(
-    window.gwd3dModel,
-    window.settings.gwd3d.keyframes[4],
-    window.settings.gwd3d.animationName
-  );
+  update3DModelAnimation(window.gwd3dModel, window.settings.gwd3d.keyframes[4], window.settings.gwd3d.animationName);
 
   TweenMax.set("#expandArrows", { opacity: 1 });
 
@@ -205,57 +218,6 @@ function changeOrientationHandler() {
       TweenMax.set("#landscapeWrapper", { pointerEvents: "none", opacity: 0 });
     } else {
       TweenMax.set("#landscapeWrapper", { pointerEvents: "auto", opacity: 1 });
-    }
-  }
-}
-
-function handle3dModelEvents(e) {
-  //for checking yaw, pivot and zoom when positioning 3dmodel
-  // if (typeof e.data == 'string') {
-  //   console.log(e.data);
-  // }
-  if (e && e.data == "starttimer:TotalEngagement") {
-    if (!window.engagement) {
-      window.engagement = true;
-    }
-  }
-
-  if (e && e.data == "stoptimer:TotalEngagement") {
-    window.engagement = false;
-  }
-  if (e && e.data == "stoptimer:TimeToFirstFrame") {
-    initBanner();
-  }
-
-  if (e && e.data == "starttimer:TimeToClick") {
-    console.log("starttimer:TimeToClick");
-    window.clickTime = new Date();
-
-    if (!window.isExpanded) {
-      window.isCollapsedSwiping = true;
-
-      if (window.mainTimeline.currentLabel() != "banner") {
-        window.mainTimeline.tweenFromTo("swipe", "click_to_expand");
-      } else {
-        window.mainTimeline.tweenFromTo("banner", "click_to_expand");
-      }
-    }
-  }
-
-  if (
-    (e && e.data == "stoptimer:TimeToClick") ||
-    e.data == "cumulativecounter:Rotate"
-  ) {
-    window.releaseClickTime = new Date();
-    window.clickedTime =
-      window.releaseClickTime.getTime() - window.clickTime.getTime();
-
-    if (window.clickedTime < 100) {
-      expand();
-    }
-
-    if (!window.isExpanded) {
-      window.mainTimeline.tweenTo("banner");
     }
   }
 }
@@ -299,14 +261,13 @@ function handleHostpageScroll(e) {
 
     // if in between bounds of visibility top/bottom, recalculating current frame based upon the bounds and current percentY
     var frame = Math.max(
-        window.settings.scrolling.startFrame,
-      Math.min(window.settings.scrolling.endFrame, frames * ((per - window.settings.scrolling.startBound) / bounds) + window.settings.scrolling.startFrame)
+      window.settings.scrolling.startFrame,
+      Math.min(
+        window.settings.scrolling.endFrame,
+        frames * ((per - window.settings.scrolling.startBound) / bounds) + window.settings.scrolling.startFrame
+      )
     );
-    update3DModelAnimation(
-      window.gwd3dModel,
-      frame,
-      window.settings.gwd3d.animationName
-    );
+    update3DModelAnimation(window.gwd3dModel, frame, window.settings.gwd3d.animationName);
   }
 }
 
