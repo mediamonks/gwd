@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="generator" content="Google Web Designer 5.1.1.0611">
+  <meta name="generator" content="Google Web Designer 6.0.1.0801">
   <meta data-template-name="gwd-expandable_fullscreen">
   <meta name="template" content="Expandable 3.0.0">
   <meta name="environment" content="gwd-dv360">
@@ -11,7 +11,7 @@
   <link href="gwdpage_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-page">
   <link href="gwdpagedeck_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-pagedeck">
   <link href="gwdgooglead_style.css" rel="stylesheet" data-version="5" data-exports-type="gwd-google-ad">
-  <link href="gwdimage_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-image">
+  <link href="gwdimage_style.css" rel="stylesheet" data-version="13" data-exports-type="gwd-image">
   <link href="style.css" rel="stylesheet">
   <style type="text/css" id="gwd-lightbox-style">
     .gwd-lightbox {
@@ -386,6 +386,13 @@
       opacity: 0;
       pointer-events: none;
     }
+    .gwd-parallax {
+      position: absolute;
+      width: 300px;
+      height: 250px;
+      left: -100%;
+      top: -100%;
+    }
   </style>
   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
   <script data-source="gwd_webcomponents_min.js" data-version="6" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
@@ -394,8 +401,9 @@
   <script data-source="gwdpage_min.js" data-version="12" data-exports-type="gwd-page" src="gwdpage_min.js"></script>
   <script data-source="gwdpagedeck_min.js" data-version="12" data-exports-type="gwd-pagedeck" src="gwdpagedeck_min.js"></script>
   <script data-source="gwdgooglead_min.js" data-version="5" data-exports-type="gwd-google-ad" src="gwdgooglead_min.js"></script>
-  <script data-source="gwdimage_min.js" data-version="12" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
+  <script data-source="gwdimage_min.js" data-version="13" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
   <script data-source="gwd3dmodel_min.js" data-version="1" data-exports-type="gwd-3d-model" src="gwd3dmodel_min.js"></script>
+  <script data-source="gwdparallax_min.js" data-version="1" data-exports-type="gwd-parallax" src="gwdparallax_min.js"></script>
 </head>
 
 <body class="document-body">
@@ -410,14 +418,14 @@
           <div class="gwd-3d-model-disable" id="gwd3dModelDisable"></div>
           <gwd-image id="closeButton" source="assets/close_btn.svg" scaling="contain" class="close-button" alignment="top left"></gwd-image>
           <gwd-image id="textSwipeToRotate" source="assets/text_swipe_to_rotate.png" scaling="stretch" class="text-swipe-to-rotate"></gwd-image>
-          <div class="swipe-to-rotate" id="swipeToRotate" data-gwd-tl-hidden="">
+          <div class="swipe-to-rotate" id="swipeToRotate">
             <div class="swipe-icon" id="swipeIcon">
               <gwd-image id="swipeIconArrowRight" source="assets/swipe_icon_arrow_right.svg" scaling="stretch" class="swipe_icon_arrow_right"></gwd-image>
               <gwd-image id="swipeIconArrowLeft" source="assets/swipe_icon_arrow_left.svg" scaling="stretch" class="swipe_icon_arrow_left"></gwd-image>
               <gwd-image id="swipeIconHand" source="assets/swipe_icon_hand.svg" scaling="stretch" class="swipe_icon_hand"></gwd-image>
             </div>
           </div>
-          <div class="expand-cta" id="expandCta" data-gwd-tl-hidden="">
+          <div class="expand-cta" id="expandCta">
             <gwd-image id="tap_to_go_fullscreen" source="assets/tap_to_go_fullscreen.png" scaling="stretch" class="tap-to-go-fullscreen"></gwd-image>
           </div>
           <div class="expand-arrows-button" id="expandArrowsButton">
@@ -433,6 +441,7 @@
             <div class="loader" id="loader"></div>
           </div>
           <div id="border" class="border" data-gwd-tl-hidden=""></div>
+          <gwd-parallax id="gwd-parallax_1" class="gwd-parallax"></gwd-parallax>
         </div>
       </gwd-page>
     </gwd-pagedeck>

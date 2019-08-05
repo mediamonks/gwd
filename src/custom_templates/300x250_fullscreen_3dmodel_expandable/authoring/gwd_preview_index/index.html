@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html><head>
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><meta charset="utf-8">
-  <meta name="generator" content="Google Web Designer 5.1.1.0611">
+  <meta name="generator" content="Google Web Designer 6.0.1.0801">
   <meta data-template-name="gwd-expandable_fullscreen">
   <meta name="template" content="Expandable 3.0.0">
   <meta name="environment" content="gwd-dv360">
@@ -9,7 +9,7 @@
   <link href="gwdpage_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-page">
   <link href="gwdpagedeck_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-pagedeck">
   <link href="gwdgooglead_style.css" rel="stylesheet" data-version="5" data-exports-type="gwd-google-ad">
-  <link href="gwdimage_style.css" rel="stylesheet" data-version="12" data-exports-type="gwd-image">
+  <link href="gwdimage_style.css" rel="stylesheet" data-version="13" data-exports-type="gwd-image">
   <link href="style.css" rel="stylesheet">
   <style type="text/css" id="gwd-lightbox-style">.gwd-lightbox {
     overflow: hidden;
@@ -416,6 +416,13 @@ body {
 .cta-over {
     opacity: 0;
     pointer-events: none;
+}
+.gwd-parallax {
+    position: absolute;
+    width: 300px;
+    height: 250px;
+    left: -100%;
+    top: -100%;
 }</style>
   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
   <script data-source="gwd_webcomponents_min.js" data-version="6" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
@@ -424,8 +431,9 @@ body {
   <script data-source="gwdpage_min.js" data-version="12" data-exports-type="gwd-page" src="gwdpage_min.js"></script>
   <script data-source="gwdpagedeck_min.js" data-version="12" data-exports-type="gwd-pagedeck" src="gwdpagedeck_min.js"></script>
   <script data-source="gwdgooglead_min.js" data-version="5" data-exports-type="gwd-google-ad" src="gwdgooglead_min.js"></script>
-  <script data-source="gwdimage_min.js" data-version="12" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
+  <script data-source="gwdimage_min.js" data-version="13" data-exports-type="gwd-image" src="gwdimage_min.js"></script>
   <script data-source="gwd3dmodel_min.js" data-version="1" data-exports-type="gwd-3d-model" src="gwd3dmodel_min.js"></script>
+  <script data-source="gwdparallax_min.js" data-version="1" data-exports-type="gwd-parallax" src="gwdparallax_min.js"></script>
 <style type="text/css">#pagedeck { overflow: hidden !important; }</style></head>
 
 <body class="document-body">
@@ -434,35 +442,36 @@ body {
     <gwd-pagedeck class="gwd-page-container" id="pagedeck" default-page="banner-page">
       <gwd-page id="banner-page" data-gwd-name="Banner page" class="gwd-page-wrapper banner gwd-lightbox" data-gwd-width="300px" data-gwd-height="250px">
         <div class="gwd-page-content banner">
-          <gwd-image id="backgroundCollapsed" source="background_collapsed.jpg?1563871750460" scaling="stretch" class="background-collapsed"></gwd-image>
-          <gwd-image id="backgroundExpand" source="background_expand.jpg?1563871750460" scaling="stretch" class="background-expand"></gwd-image>
+          <gwd-image id="backgroundCollapsed" source="background_collapsed.jpg?1565005642946" scaling="stretch" class="background-collapsed"></gwd-image>
+          <gwd-image id="backgroundExpand" source="background_expand.jpg?1565005642946" scaling="stretch" class="background-expand"></gwd-image>
           <gwd-3d-model id="gwd-3d-model_1" id-url="a4juzmTi3JL" class="gwd-3d-model" data-gwd-name="gwd_3d_model" transparent=""></gwd-3d-model>
           <div class="gwd-3d-model-disable" id="gwd3dModelDisable"></div>
-          <gwd-image id="closeButton" source="close_btn.svg?1563871750460" scaling="contain" class="close-button" alignment="top left"></gwd-image>
-          <gwd-image id="textSwipeToRotate" source="text_swipe_to_rotate.png?1563871750460" scaling="stretch" class="text-swipe-to-rotate"></gwd-image>
+          <gwd-image id="closeButton" source="close_btn.svg?1565005642946" scaling="contain" class="close-button" alignment="top left"></gwd-image>
+          <gwd-image id="textSwipeToRotate" source="text_swipe_to_rotate.png?1565005642946" scaling="stretch" class="text-swipe-to-rotate"></gwd-image>
           <div class="swipe-to-rotate" id="swipeToRotate">
             <div class="swipe-icon" id="swipeIcon">
-              <gwd-image id="swipeIconArrowRight" source="swipe_icon_arrow_right.svg?1563871750460" scaling="stretch" class="swipe_icon_arrow_right"></gwd-image>
-              <gwd-image id="swipeIconArrowLeft" source="swipe_icon_arrow_left.svg?1563871750460" scaling="stretch" class="swipe_icon_arrow_left"></gwd-image>
-              <gwd-image id="swipeIconHand" source="swipe_icon_hand.svg?1563871750460" scaling="stretch" class="swipe_icon_hand"></gwd-image>
+              <gwd-image id="swipeIconArrowRight" source="swipe_icon_arrow_right.svg?1565005642946" scaling="stretch" class="swipe_icon_arrow_right"></gwd-image>
+              <gwd-image id="swipeIconArrowLeft" source="swipe_icon_arrow_left.svg?1565005642946" scaling="stretch" class="swipe_icon_arrow_left"></gwd-image>
+              <gwd-image id="swipeIconHand" source="swipe_icon_hand.svg?1565005642946" scaling="stretch" class="swipe_icon_hand"></gwd-image>
             </div>
           </div>
           <div class="expand-cta" id="expandCta">
-            <gwd-image id="tap_to_go_fullscreen" source="tap_to_go_fullscreen.png?1563871750460" scaling="stretch" class="tap-to-go-fullscreen"></gwd-image>
+            <gwd-image id="tap_to_go_fullscreen" source="tap_to_go_fullscreen.png?1565005642946" scaling="stretch" class="tap-to-go-fullscreen"></gwd-image>
           </div>
           <div class="expand-arrows-button" id="expandArrowsButton">
-            <gwd-image id="expandArrowsButtonImage" source="expand_arrows_button.svg?1563871750460" scaling="stretch" class="expand-btn"></gwd-image>
+            <gwd-image id="expandArrowsButtonImage" source="expand_arrows_button.svg?1565005642946" scaling="stretch" class="expand-btn"></gwd-image>
           </div>
-          <gwd-image id="cta" source="cta.png?1563871750460" scaling="stretch" class="cta" alignment="bottom left"></gwd-image>
-          <gwd-image id="cta_over" source="cta_over.png?1563871750460" scaling="stretch" class="cta cta-over" alignment="bottom left"></gwd-image>
+          <gwd-image id="cta" source="cta.png?1565005642946" scaling="stretch" class="cta" alignment="bottom left"></gwd-image>
+          <gwd-image id="cta_over" source="cta_over.png?1565005642946" scaling="stretch" class="cta cta-over" alignment="bottom left"></gwd-image>
           <div class="landscape-wrapper" id="landscapeWrapper">
             <div class="background" id="background"></div>
-            <gwd-image id="rotate_icon" source="landscape_rotate_icon.png?1563871750460" scaling="stretch" class="landscape-rotate-icon"></gwd-image>
+            <gwd-image id="rotate_icon" source="landscape_rotate_icon.png?1565005642946" scaling="stretch" class="landscape-rotate-icon"></gwd-image>
           </div>
           <div class="loader-wrapper" id="loaderWrapper">
             <div class="loader" id="loader"></div>
           </div>
           <div id="border" class="border"></div>
+          <gwd-parallax id="gwd-parallax_1" class="gwd-parallax"></gwd-parallax>
         </div>
       </gwd-page>
     </gwd-pagedeck>
@@ -518,9 +527,11 @@ body {
         handleAdInitialized, false);
     })();
   </script>
-  <script type="text/javascript" id="main" src="main.js"></script>
+  <script type="text/javascript" id="settings" src="settings.js"></script>
+  <script type="text/javascript" id="logic" src="logic.js"></script>
+  <script type="text/javascript" id="animation" src="animation.js"></script>
 
 
 <script data-exports-type="dclk-quick-preview">studio.Enabler.setRushSimulatedLocalEvents(true);</script><script data-exports-type="gwd-studio-registration">function StudioExports() {
 Enabler.requestFullscreenExpand();
-}</script><script type="text/gwd-admetadata">{"version":1,"type":"GoogleAd","format":"","template":"Expandable 3.0.0","politeload":false,"fullscreen":true,"counters":[],"timers":[],"exits":[],"creativeProperties":{"minWidth":300,"minHeight":250,"maxWidth":300,"maxHeight":250},"components":["gwd-3d-model","gwd-google-ad","gwd-image","gwd-page","gwd-pagedeck"],"responsive":false}</script></body></html>
+}</script><script type="text/gwd-admetadata">{"version":1,"type":"GoogleAd","format":"","template":"Expandable 3.0.0","politeload":false,"fullscreen":true,"counters":[],"timers":[],"exits":[],"creativeProperties":{"minWidth":300,"minHeight":250,"maxWidth":300,"maxHeight":250},"components":["gwd-3d-model","gwd-google-ad","gwd-image","gwd-page","gwd-pagedeck","gwd-parallax"],"responsive":false}</script></body></html>

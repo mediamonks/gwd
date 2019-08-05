@@ -11,7 +11,6 @@ function init() {
 
   window.engagement = false;
   window.isExpanded = false;
-  window.isCollapsedSwiping = false;
   window.scrollEnabled = false;
 
   window.gwd3dModel = document.querySelector("#gwd-3d-model_1");
@@ -35,7 +34,6 @@ function handle3dModelEvents(e) {
 
   //check if 3dModel is available
   if (!window.gwd3dModelContent) {
-
     window.gwd3dModelContent = window.gwd3dModel.children[0].contentWindow;
   }
 
@@ -43,29 +41,31 @@ function handle3dModelEvents(e) {
     initBanner();
   }
 
-
+  //interaction with 3d element started
   if (e && e.data == "starttimer:TotalEngagement") {
     if (!window.engagement) {
       window.engagement = true;
+
+      window.mainTimeline.pause();
+      window.collapseSwipeFadeOutTimeline = getCollapseSwipeOutTimeline();
+
     }
   }
 
+//interaction with 3d element stopped
   if (e && e.data == "stoptimer:TotalEngagement") {
     window.engagement = false;
+
+    if (!window.isExpanded) {
+      window.mainTimeline.pause();
+      window.collapseSwipeFadeInTimeline = getCollapseSwipeInTimeline();
+    }
   }
 
   if (e && e.data == "starttimer:TimeToClick") {
     window.clickTime = new Date();
 
-    if (!window.isExpanded) {
-      window.isCollapsedSwiping = true;
 
-      if (window.mainTimeline.currentLabel() != "banner") {
-        window.mainTimeline.tweenFromTo("swipe", "click_to_expand");
-      } else {
-        window.mainTimeline.tweenFromTo("banner", "click_to_expand");
-      }
-    }
   }
 
   if ((e && e.data == "stoptimer:TimeToClick") || e.data == "cumulativecounter:Rotate") {
@@ -75,11 +75,9 @@ function handle3dModelEvents(e) {
     if (window.clickedTime < 100) {
       expand();
     }
-
-    if (!window.isExpanded) {
-      window.mainTimeline.tweenTo("banner");
-    }
   }
+
+
 }
 
 function initBanner() {
@@ -102,11 +100,12 @@ function initBanner() {
   Enabler.addEventListener(studio.events.StudioEvent.FULLSCREEN_COLLAPSE_FINISH, handleCollapseFinish.bind(window));
   Enabler.addEventListener(studio.events.StudioEvent.ORIENTATION, changeOrientationHandler.bind(window));
 
+    document.querySelector("#closeButton").addEventListener("click", collapse.bind(window));
   document.querySelector("#expandArrowsButton").addEventListener("click", expand.bind(window));
 
   document.querySelector("#cta").addEventListener("click", handleCtaClick.bind(window));
-  document.querySelector("#cta").addEventListener("touchstart", handleTouchStart);
-  document.querySelector("#cta").addEventListener("touchend", handleTouchEnd);
+  document.querySelector("#cta").addEventListener("touchstart", handleTouchStart.bind(window));
+  document.querySelector("#cta").addEventListener("touchend", handleTouchEnd.bind(window));
 
   document.querySelector("#closeButton").addEventListener("click", collapse.bind(window));
 
@@ -116,6 +115,8 @@ function initBanner() {
       window.scrollEnabled = true;
       console.log("scrolling enabled in testing mode");
     }
+  } else {
+    window.scrollEnabled = true;
   }
 
   if (window.scrollEnabled) {
@@ -162,7 +163,11 @@ function expand() {
 function handleExpandStart(e) {
   window.update3dModelPosition("expand_start");
 
-  window.gwdPageContent.style.width = window.bannerPage.style.width = window.gwd3dModel.style.width = "100%";
+    console.log(window.gwdPageContent);
+    console.log(window.bannerPage);
+    console.log(window.gwd3dModel);
+
+    window.gwdPageContent.style.width = window.bannerPage.style.width = window.gwd3dModel.style.width = "100%";
   window.gwdPageContent.style.height = window.bannerPage.style.height = window.gwd3dModel.style.height = "100%";
 
   Enabler.finishFullscreenExpand();
@@ -176,7 +181,7 @@ function handleExpandFinish() {
   //Daniel Google mod
   window.gwd3dModelContent.postMessage("ScrollGatingDisable", "*");
 
-  window.mainTimeline.tweenFromTo("expand", "expand_end");
+  this.mainTimeline.gotoAndPlay("expand_end")
   TweenMax.set("#expandArrows", { opacity: 0 });
 }
 
