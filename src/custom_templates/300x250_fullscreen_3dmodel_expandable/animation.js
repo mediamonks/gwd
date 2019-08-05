@@ -24,7 +24,6 @@ function getMainTimeline(obj) {
   tl.addLabel('swipe', '+=6');
 
   tl.to(['#swipeToRotate', '#textSwipeToRotate'], 0.2, { opacity: 0, ease: Power0.easeIn }, 'swipe');
-  tl.call(removePauseClick, [tl], this, '+=0.5');
 
   tl.addPause('click_to_expand_pause');
   tl.addLabel('click_to_expand');
