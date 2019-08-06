@@ -40,12 +40,8 @@ function getMainTimeline(obj) {
 
   //EXPAND//
   tl.add("expand", "+=0.02");
-  tl.addCallback(
-    update3DModelAnimation,
-    "expand",
-    [this.gwd3dModel, this.settings.gwd3d.keyframes[4], this.settings.gwd3d.animationName],
-    this
-  );
+
+  tlInsertGwd3dModelAnimation(tl, this.gwd3dModel, this.settings.gwd3d.animationName, this.keyObj, this.settings.gwd3d.keyframes[5], this.settings.gwd3d.keyframes[6], "expand+=0.3");
 
   tl.from(
     ["#closeButton"],
@@ -70,6 +66,23 @@ function getMainTimeline(obj) {
   this.gwdPageContent.style.height = this.bannerPage.style.height = this.settings.dimensions.height + "px";
 
   return tl;
+}
+
+//function to insert a piece of the 3dmodel animation into a greensock timeline
+function tlInsertGwd3dModelAnimation(tl, gwd3dModel, animationName, keyObj, secFrom, secTo, label) {
+  tl.fromTo(
+      keyObj,
+    secTo - secFrom,
+    { key: secFrom },
+    {
+      key: secTo,
+      ease: Linear.easeNone,
+      onUpdate: function() {
+        update3DModelAnimation(gwd3dModel, keyObj[Object.keys(keyObj)[0]], animationName);
+      }.bind(this)
+    },
+    label
+  );
 }
 
 //remove elements when started interacting with 3d element in collapsed mode

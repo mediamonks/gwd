@@ -170,7 +170,7 @@ function handleExpandFinish() {
   //Daniel Google mod
   window.gwd3dModelContent.postMessage("ScrollGatingDisable", "*");
 
-  this.mainTimeline.gotoAndPlay("expand_end");
+  this.mainTimeline.gotoAndPlay("expand");
   TweenMax.set("#expandArrows", { opacity: 0 });
 }
 

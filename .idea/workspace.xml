@@ -3,90 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a7ce9613-b9fd-4208-9422-1448e48341f1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/animation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/background_collapsed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/background_expand.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/close_btn.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/cta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/cta_over.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/expand_arrows_button.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/landscape_rotate_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/swipe_icon_arrow_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/swipe_icon_arrow_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/swipe_icon_hand.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/tap_to_go_fullscreen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/assets/text_swipe_to_rotate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/googbase_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd3dmodel_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/background_collapsed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/background_expand.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/close_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/close_btn.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/cta.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/cta_over.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/expand_arrows_button.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/expand_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/expand_btn.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/googbase_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwd3dmodel_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwd_webcomponents_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdgooglead_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdgooglead_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdimage_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdimage_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdpage_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdpage_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdpagedeck_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdpagedeck_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdparallax_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdtaparea_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/gwdtaparea_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/in_theaters_soon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/in_theaters_soon_collapsed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/landscape_rotate_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/lasereyes_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/poof.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/poof_clouds.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/preview.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/preview_polymer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/rotate_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/superfly_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/swipe_icon_arrow_left.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/swipe_icon_arrow_right.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/swipe_icon_hand.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/tap_to_go_fullscreen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/text_agent_venture.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/text_agent_venture_collapsed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/text_swipe_to_rotate.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/webcomponentsjs/custom-elements-es5-adapter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_preview_index/webcomponentsjs/webcomponents-lite.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_webcomponents_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwd_workspace.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdgooglead_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdgooglead_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdimage_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdimage_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdpage_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdpage_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdpagedeck_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdpagedeck_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdparallax_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdtaparea_min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/gwdtaparea_style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/index_groups_archive" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/logic.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/preview_polymer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/readme.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/scroll.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/webcomponentsjs/custom-elements-es5-adapter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/webcomponentsjs/webcomponents-lite.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -99,11 +17,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="164" selection-start-line="164" selection-end-line="164" />
+            <state relative-caret-position="268">
+              <caret line="233" column="31" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="685">
+              <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/settings.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../../g/google/google-new-balance-990-3d-display/300x250_fullscreen/authoring/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="366" selection-start-line="366" selection-end-line="379" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -115,6 +56,9 @@
       <find>this.gwd3dModelContent</find>
       <find>contentWindow</find>
       <find>console.log</find>
+      <find>gotoandplay</find>
+      <find>'expand'</find>
+      <find>update3DModelAnimation</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -126,6 +70,7 @@
         <option value="$PROJECT_DIR$/.prettierrc" />
         <option value="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/logic.js" />
         <option value="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js" />
+        <option value="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js" />
       </list>
     </option>
   </component>
@@ -140,8 +85,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -177,12 +122,13 @@
       <updated>1564652400691</updated>
       <workItem from="1564652401870" duration="712000" />
       <workItem from="1564660896667" duration="715000" />
-      <workItem from="1565006479635" duration="264000" />
+      <workItem from="1565006479635" duration="863000" />
+      <workItem from="1565077485958" duration="1921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1696000" />
+    <option name="totallyTimeSpent" value="4216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -218,15 +164,25 @@
     <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/logic.js" />
     <entry file="file://$PROJECT_DIR$/../../../g/google/google-new-balance-990-3d-display/300x250_fullscreen/authoring/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="194" column="31" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="31" />
+        <state relative-caret-position="436">
+          <caret line="366" selection-start-line="366" selection-end-line="379" selection-end-column="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/settings.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="164" selection-start-line="164" selection-end-line="164" />
+        <state relative-caret-position="268">
+          <caret line="233" column="31" selection-start-line="233" selection-start-column="9" selection-end-line="233" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
         </state>
       </provider>
     </entry>
