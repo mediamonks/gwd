@@ -41,7 +41,15 @@ function getMainTimeline(obj) {
   //EXPAND//
   tl.add("expand", "+=0.02");
 
-  tlInsertGwd3dModelAnimation(tl, this.gwd3dModel, this.settings.gwd3d.animationName, this.keyObj, this.settings.gwd3d.keyframes[5], this.settings.gwd3d.keyframes[6], "expand+=0.3");
+  tlInsertGwd3dModelAnimation(
+    tl,
+    this.gwd3dModel,
+    this.settings.gwd3d.animationName,
+    this.keyObj,
+    this.settings.gwd3d.keyframes[5],
+    this.settings.gwd3d.keyframes[6],
+    "expand+=0.3"
+  );
 
   tl.from(
     ["#closeButton"],
@@ -71,7 +79,7 @@ function getMainTimeline(obj) {
 //function to insert a piece of the 3dmodel animation into a greensock timeline
 function tlInsertGwd3dModelAnimation(tl, gwd3dModel, animationName, keyObj, secFrom, secTo, label) {
   tl.fromTo(
-      keyObj,
+    keyObj,
     secTo - secFrom,
     { key: secFrom },
     {

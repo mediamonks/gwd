@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7ce9613-b9fd-4208-9422-1448e48341f1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/logic.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,8 +27,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
+            <state relative-caret-position="709">
+              <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
             </state>
           </provider>
         </entry>
@@ -123,12 +121,12 @@
       <workItem from="1564652401870" duration="712000" />
       <workItem from="1564660896667" duration="715000" />
       <workItem from="1565006479635" duration="863000" />
-      <workItem from="1565077485958" duration="1921000" />
+      <workItem from="1565077485958" duration="2110000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4216000" />
+    <option name="totallyTimeSpent" value="4405000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -181,8 +179,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/custom_templates/300x250_fullscreen_3dmodel_expandable/authoring/animation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="80" column="68" selection-start-line="80" selection-start-column="68" selection-end-line="80" selection-end-column="68" />
+        <state relative-caret-position="709">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>
