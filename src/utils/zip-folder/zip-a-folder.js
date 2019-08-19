@@ -8,22 +8,28 @@ const fs = require('fs');
 
 
 // ---- REGEX for what there is to change
-const regex1 = new RegExp('Expandable 3.0.0', 'g');
-const regex2 = new RegExp('Enabler.requestFullscreenExpand', 'g');
-const regex3 = new RegExp('Enabler.queryFullscreenSupport', 'g');
-const regex4 = new RegExp('Enabler.queryFullscreenDimensions', 'g');
-const regex5 = new RegExp('Enabler.finishFullscreenExpand', 'g');
-const regex6 = new RegExp('Enabler.requestFullscreenCollapse', 'g');
-const regex7 = new RegExp('Enabler.finishFullscreenCollapse', 'g');
+const from = [
+  new RegExp('Expandable 3.0.0', 'g'),
+  new RegExp('Enabler.requestFullscreenExpand', 'g'),
+  new RegExp('Enabler.queryFullscreenSupport', 'g'),
+  new RegExp('Enabler.queryFullscreenDimensions', 'g'),
+  new RegExp('Enabler.finishFullscreenExpand', 'g'),
+  new RegExp('Enabler.requestFullscreenCollapse', 'g'),
+  new RegExp('Enabler.finishFullscreenCollapse', 'g'),
+  new RegExp('&thumbnail=')
+];
 
 // ---- REPLACE with the following string
-const to1 = 'Banner 3.0.0';
-const to2 = 'Enabler[\'requestFull\' + \'screenExpand\']';
-const to3 = 'Enabler[\'queryFull\' + \'screenSupport\']';
-const to4 = 'Enabler[\'queryFull\' + \'screenDimensions\']';
-const to5 = 'Enabler[\'finishFull\' + \'screenExpand\']';
-const to6 = 'Enabler[\'requestFull\' + \'screenCollapse\']';
-const to7 = 'Enabler[\'finishFull\' + \'screenCollapse\']';
+const to = [
+    'Banner 3.0.0',
+    'Enabler[\'requestFull\' + \'screenExpand\']',
+    'Enabler[\'queryFull\' + \'screenSupport\']',
+    'Enabler[\'queryFull\' + \'screenDimensions\']',
+    'Enabler[\'finishFull\' + \'screenExpand\']',
+    'Enabler[\'requestFull\' + \'screenCollapse\']',
+    'Enabler[\'finishFull\' + \'screenCollapse\']',
+    '&size=&thumbnail='
+];
 
 
 class ZipAFolder {
@@ -119,21 +125,12 @@ async function replaceInFiles(path)
     try {
 
       // ---- find/replace
-      var results = await replace({files:file,from:regex1,to: to1});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex2,to:to2});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex3,to: to3});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex4,to:to4});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex5,to: to5});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex6,to:to6});
-      //console.log('Replacement results:', results);
-      results = await replace({files:file,from:regex7,to: to7});
-      //console.log('Replacement results:', results);
-
+      for (let i=0; i<from.length; i++)
+      {
+        let results = await replace({files:file,from: from[i],to: to[i]});
+        console.log(from[i]);
+        console.log(to[i]);
+      }
       console.log('Replacement done');
     }
     catch (error) {
