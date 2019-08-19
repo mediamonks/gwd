@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^3.0.0",
     "ds": "^1.4.2",
     "extract-zip": "^1.6.7",
     "file-set": "^2.0.1",

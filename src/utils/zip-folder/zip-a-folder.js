@@ -4,49 +4,66 @@ const FileSet = require('file-set');
 const extract = require('extract-zip');
 const replace = require('replace-in-file');
 const fs = require('fs');
-
+const program = require('commander');
 
 
 // ---- REGEX for what there is to change
-const from = [
+let from = [
   new RegExp('Expandable 3.0.0', 'g'),
   new RegExp('Enabler.requestFullscreenExpand', 'g'),
   new RegExp('Enabler.queryFullscreenSupport', 'g'),
   new RegExp('Enabler.queryFullscreenDimensions', 'g'),
   new RegExp('Enabler.finishFullscreenExpand', 'g'),
   new RegExp('Enabler.requestFullscreenCollapse', 'g'),
-  new RegExp('Enabler.finishFullscreenCollapse', 'g'),
-  new RegExp('&thumbnail=')
+  new RegExp('Enabler.finishFullscreenCollapse', 'g')
 ];
 
 // ---- REPLACE with the following string
-const to = [
+let to = [
     'Banner 3.0.0',
     'Enabler[\'requestFull\' + \'screenExpand\']',
     'Enabler[\'queryFull\' + \'screenSupport\']',
     'Enabler[\'queryFull\' + \'screenDimensions\']',
     'Enabler[\'finishFull\' + \'screenExpand\']',
     'Enabler[\'requestFull\' + \'screenCollapse\']',
-    'Enabler[\'finishFull\' + \'screenCollapse\']',
-    '&size=&thumbnail='
+    'Enabler[\'finishFull\' + \'screenCollapse\']'
 ];
 
+const fromQuality =   new RegExp('&thumbnail=') ;
+const toQuality = '&size=&thumbnail=' ;
 
 class ZipAFolder {
 
     static async main() {
 
+      let p = '';
       // get argument
-      if(process.argv.length < 3)
+      program.arguments('<path>')
+          .action( function(path){
+            p = path;
+          })
+          .option('-q, --quality', 'to increase quality of 3D design').parse(process.argv);
+
+      if(typeof  p === '')
       {
         console.log('Arguments needed : [path]');
-        return ;
+        return;
       }
-      var p = process.argv[2];        // path
+      if(program.quality)
+      {
+        from.push(fromQuality);
+        to.push(toQuality);
+      }
+
+
+
+
+      //var p = process.argv[2];        // path
 
       console.log(p);
       const regexp1 = new RegExp('\\\\', 'g');
       p = p.replace(regexp1,'\\');
+
 
       // create folder
 
